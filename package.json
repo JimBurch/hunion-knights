@@ -1,0 +1,28 @@
+{
+	"name": "hunion-knights",
+	"version": "1.0.0",
+	"description": "A support Discord bot for the Hunion Knights company",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"devStart": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JimBurch/hunion-knights.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/JimBurch/hunion-knights/issues"
+	},
+	"homepage": "https://github.com/JimBurch/hunion-knights#readme",
+	"dependencies": {
+		"discord.js": "^12.5.3",
+		"dotenv": "^10.0.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.12"
+	}
+}
