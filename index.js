@@ -7,8 +7,6 @@ const client = new Discord.Client({
 
 const { BOT_TOKEN } = process.env;
 
-client.login(BOT_TOKEN);
-
 client.on('ready', () => {
 	console.log('Ready for battle!');
 });
@@ -28,3 +26,5 @@ client.on('message', msg => {
 client.on('messageDelete', msg => {
 	msg.reply('stop deleting messages!!');
 });
+
+client.login(BOT_TOKEN);
