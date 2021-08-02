@@ -24,7 +24,7 @@ for (const folder of commandFolders) {
 
 const { PREFIX, BOT_TOKEN } = process.env;
 
-client.on('ready', () => {
+client.once('ready', () => {
 	console.log('Hunion Bot, ready for battle!');
 });
 
@@ -50,6 +50,14 @@ client.on('message', message => {
 	// CHECK THE COMMAND FOR GUILDONLY: TRUE
 	if (command.guildOnly && message.channel.type === 'dm') {
 		return message.reply("I can't execute that command inside DMs!");
+	}
+
+	// CHECK COMMAND & USER FOR THE RIGHT PRIVILEGES
+	if (command.permissions) {
+		const authorPerms = message.channel.permissionsFor(message.author);
+		if (!authorPerms || !authorPerms.has(command.permissions)) {
+			return message.reply('You can not do this!');
+		}
 	}
 
 	// CHECK THE COMMAND FOR ARGUMENTS (IF ARGS: TRUE)

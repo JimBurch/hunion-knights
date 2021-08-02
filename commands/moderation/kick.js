@@ -4,6 +4,7 @@ module.exports = {
 	args: true,
 	usage: '<user>',
 	guildOnly: true,
+	permissions: 'KICK_MEMBERS',
 	execute(message, args) {
 		const user = args[0];
 		message.channel.send(`You want to kick ${user}`);
